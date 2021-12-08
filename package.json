@@ -2,10 +2,26 @@
   "name": "fetch-rewards-exercise",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "13.8.0"
+  },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "Eugene Monnier",
-  "license": "ISC"
+  "license": "ISC",
+  "standard": {
+    "env": "jest"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.1.0",
+    "mongoose-autopopulate": "^0.16.0",
+    "morgan": "^1.10.0"
+  }
 }
