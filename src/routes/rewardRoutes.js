@@ -10,4 +10,16 @@ rewardRouter.post('/create', async (req, res, next) => {
   .catch(next)
 })
 
+rewardRouter.get('/balance', async (req, res, next) => {
+entries = await Reward.find()
+let balance = await entries.reduce((result, {payer, points}) => {
+  if (!result[payer]) result[payer] = points
+  else result[payer] += points;
+  return result;
+}, {})
+
+console.log(balance)
+res.status(200).json({balance})
+})
+
 module.exports = rewardRouter
