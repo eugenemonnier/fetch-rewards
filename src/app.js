@@ -1,7 +1,9 @@
+// dependencies
 const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 
+// initiate express server
 const app = express()
 app.use(cors())
 app.use(morgan('dev'))
