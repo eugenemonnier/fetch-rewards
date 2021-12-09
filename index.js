@@ -6,12 +6,9 @@ const mongoose = require('mongoose')
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true
 }
 
-mongoose.connect(MONGODB_URI, options, () => {
-  console.log('Connected to MongoDB')
-})
+mongoose.connect(MONGODB_URI, options).then(() => console.log('Connected to MongoDB.')).catch(e => console.error(`Error: ${e.stack}`))
 
 const app = require('./src/app')
 app.start(PORT)

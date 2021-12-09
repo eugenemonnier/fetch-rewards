@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-const entry = mongoose.Schema({
-  companyName: {type: String, required: true},
-  amount: {type: Number, required: true},
-  dateTime: {type: Date, required: true},
+const rewards = mongoose.Schema({
+  payer: {type: String, required: true},
+  points: {type: Number, required: true},
+  timestamp: {type: Date, required: true},
 })
 
-module.exports = mongoose.model('entry', entry)
+module.exports = mongoose.model('rewards', rewards)
